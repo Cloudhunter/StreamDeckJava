@@ -26,4 +26,11 @@
       <scope>compile</scope>
     </dependency>
   </dependencies>
+  <repositories>
+    <repository>
+      <id>mvnrepository</id>
+      <name>Maven Repository</name>
+      <url>https://mvnrepository.com/artifact</url>
+    </repository>
+  </repositories>
 </project>
