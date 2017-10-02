@@ -41,3 +41,17 @@ task createPom << {
         }
     }.writeTo("pom.xml")
 }
+
+task("uploadJars", dependsOn:"createPom") {
+    description = "uploads JARs"
+    if (System.getenv("local_maven") != null) {
+        apply plugin: 'maven'
+        uploadArchives {
+            repositories {
+                mavenDeployer {
+                    repository(url: "file://" + System.getenv("local_maven"))
+                }
+            }
+        }
+    }
+}
