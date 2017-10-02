@@ -1,0 +1,12 @@
+apply plugin: 'java'
+
+repositories {
+    flatDir name: 'libs', dirs: 'libs'
+	jcenter()
+	maven { url "http://mvnrepository.com/artifact" }
+}
+
+dependencies {
+    compile ':hid4java:0.5.0'
+	compile 'net.java.dev.jna:jna:4.2.2'
+}
