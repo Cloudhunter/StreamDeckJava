@@ -4,14 +4,16 @@ apply plugin: 'maven'
 
 repositories {
     flatDir name: 'libs', dirs: 'libs'
-//	jcenter()
-	maven { url "http://mvnrepository.com/artifact" }
+	jcenter()
 }
 
 dependencies {
     compile ':hid4java:0.5.0-modified'
 	compile 'net.java.dev.jna:jna:4.2.2'
 }
+
+version = '0.1.0'
+group = 'uk.co.cloudhunter'
 
 task createPom << {
     pom {
