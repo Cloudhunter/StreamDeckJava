@@ -1,4 +1,6 @@
 apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'maven'
 
 repositories {
     flatDir name: 'libs', dirs: 'libs'
@@ -7,6 +9,25 @@ repositories {
 }
 
 dependencies {
-    compile ':hid4java:0.5.0'
+    compile ':hid4java:0.5.0-modified'
 	compile 'net.java.dev.jna:jna:4.2.2'
+}
+
+task createPom << {
+    pom {
+        project {
+            groupId 'uk.co.cloudhunter'
+            artifactId 'streamdeckjava'
+            version '0.1.0'
+
+            inceptionYear '2017'
+            licenses {
+                license {
+                    name 'MIT License'
+                    url 'http://www.opensource.org/licenses/mit-license.php'
+                    distribution 'repo'
+                }
+            }
+        }
+    }.writeTo("pom.xml")
 }
