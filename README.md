@@ -17,6 +17,7 @@ I've only tested it on Windows - in theory it should work on Linux and Mac Os X 
 
 # Credits
 It is loosely based on the excellent [StreamDeckSharp](https://github.com/OpenStreamDeck/StreamDeckSharp) library - but ported to Java. Many thanks to Christian Wischenbart for that project :)
+Thanks to the [https://github.com/gary-rowe/hid4java](hid4java) JNA wrapping of the [hidapi](https://github.com/signal11/hidapi) library
 
 # Contact
 The best way to reach me is twitter - [@Cloudhunter](https://twitter.com/Cloudhunter) - but feel free to create an issue if you have a problem!
