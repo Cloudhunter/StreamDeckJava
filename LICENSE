@@ -1,6 +1,7 @@
 MIT License
 
-Copyright (c) 2017 Cloudhunter
+Copyright (c) 2017 Aaron Mills "Cloudhunter"
+Portions adapted from C# code located at https://github.com/OpenStreamDeck/StreamDeckSharp Copyright (c) 2017 Christian Wischenbart
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
