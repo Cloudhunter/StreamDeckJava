@@ -2,7 +2,7 @@
 An unofficial API to facilitate interaction with the [Elgato Stream Deck](https://www.elgato.com/de/gaming/stream-deck)
 
 # Requirements
-Requires the hid4java-0.5.0-modified jar in the libs folder - it has been modified to include the latest hidapi which fixes Windows 10 support.
+Requires the hid4java-0.5.0-modified jar in the libs folder or on the maven - it has been modified to include the latest hidapi which fixes Windows 10 support.
 
 hid4java requires [JNA 4.2.2](https://mvnrepository.com/artifact/net.java.dev.jna/jna/4.2.2) - gradle will download it automatically and there is an (untested) pom.xml which should do the same.
 
@@ -11,7 +11,7 @@ Examples are located in the example folder to show you how to write images, rand
 
 # Builds
 Builds can be found [here](http://maven.k-4u.nl/uk/co/cloudhunter/streamdeckjava/). It can also be obtained using this Maven repo: http://maven.k-4u.nl
-I'm looking into shipping the modified hid4java too - I don't know much about Maven, but hopefully will update this soon with how to easily download the modified lib. In the mean time, you can get it direct from github [here](https://github.com/Cloudhunter/StreamDeckJava/raw/master/libs/hid4java-0.5.0-modified.jar)
+The modified hid4java is also in the maven repository [here](http://maven.k-4u.nl/org/hid4java)
 
 # Caveats
 I've only tested it on Windows - in theory it should work on Linux and Mac Os X due to the hid4java library, but this is completely untested. Let me know!
