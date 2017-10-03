@@ -15,6 +15,12 @@ dependencies {
 version = '0.1.0'
 group = 'uk.co.cloudhunter'
 
+configurations { allJars }
+
+artifacts{
+    allJars file("libs/hid4java-0.5.0-modified.jar")
+}
+
 task createPom << {
     pom {
         project {
@@ -30,14 +36,14 @@ task createPom << {
                     distribution 'repo'
                 }
             }
-			
+
             repositories {
                 repository {
                     id 'central'
                     name 'Maven Repository Switchboard'
                     url 'http://repo1.maven.org/maven2'
                 }
-		repository {
+                repository {
                     id 'k-4u'
                     name 'k-4u Maven'
                     url 'http://maven.k-4u.nl/'
@@ -55,8 +61,8 @@ task("uploadJars", dependsOn:"createPom") {
             repositories {
                 mavenDeployer {
                     repository(url: "file://" + System.getenv("local_maven"))
-		    pom {
-        	        project {
+                    pom {
+                        project {
                             groupId 'uk.co.cloudhunter'
                             artifactId 'streamdeckjava'
                             version '0.1.0'
@@ -70,22 +76,40 @@ task("uploadJars", dependsOn:"createPom") {
                                 }
                             }
 			
-			    repositories {
-				repository {
-				    id 'central'
-				    name 'Maven Repository Switchboard'
-				    url 'http://repo1.maven.org/maven2'
-				}
-				repository {
-				    id 'k-4u'
-				    name 'k-4u Maven'
-				    url 'http://maven.k-4u.nl/'
-				}
-			    }
+                            repositories {
+                                repository {
+                                    id 'central'
+                                    name 'Maven Repository Switchboard'
+                                    url 'http://repo1.maven.org/maven2'
+                                }
+                                repository {
+                                    id 'k-4u'
+                                    name 'k-4u Maven'
+                                    url 'http://maven.k-4u.nl/'
+                                }
+                            }
                         }
-		    }
+                    }
                 }
             }
+        }
+    }
+}
+
+uploadAllJars {
+    if (System.getenv("local_maven") != null) {
+        repositories {  
+            mavenDeployer {  
+                repository(url: "file://" + System.getenv("local_maven"))
+                pom.artifactId = "hid4java"
+                pom.version = "0.5.0-modified"
+                pom.groupId = "org"
+                pom.whenConfigured {pom ->
+                    pom.dependencies.removeAll { dep -> dep.groupId == "org" && dep.artifactId == "hid4java" }
+                }
+                println pom.dependencies
+
+           }
         }
     }
 }
