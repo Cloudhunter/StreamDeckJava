@@ -28,9 +28,14 @@
   </dependencies>
   <repositories>
     <repository>
-      <id>mvnrepository</id>
-      <name>Maven Repository</name>
-      <url>https://mvnrepository.com/artifact</url>
+      <id>central</id>
+      <name>Maven Repository Switchboard</name>
+      <url>http://repo1.maven.org/maven2</url>
+    </repository>
+    <repository>
+      <id>k-4u</id>
+      <name>k-4u Maven</name>
+      <url>http://maven.k-4u.nl/</url>
     </repository>
   </repositories>
 </project>
