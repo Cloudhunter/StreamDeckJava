@@ -21,6 +21,7 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
+      <groupId>org</groupId>
       <artifactId>hid4java</artifactId>
       <version>0.5.0-modified</version>
       <scope>compile</scope>

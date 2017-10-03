@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-    compile ':hid4java:0.5.0-modified'
+    compile 'org:hid4java:0.5.0-modified'
 	compile 'net.java.dev.jna:jna:4.2.2'
 }
 
