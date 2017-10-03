@@ -33,9 +33,14 @@ task createPom << {
 			
             repositories {
                 repository {
-                    id 'mvnrepository'
-                    name 'Maven Repository'
-                    url 'https://mvnrepository.com/artifact'
+                    id 'central'
+                    name 'Maven Repository Switchboard'
+                    url 'http://repo1.maven.org/maven2'
+                }
+		repository {
+                    id 'k-4u'
+                    name 'k-4u Maven'
+                    url 'http://maven.k-4u.nl/'
                 }
             }
         }
@@ -65,13 +70,18 @@ task("uploadJars", dependsOn:"createPom") {
                                 }
                             }
 			
-                            repositories {
-                                repository {
-                                    id 'mvnrepository'
-                                    name 'Maven Repository'
-                                    url 'https://mvnrepository.com/artifact'
-                                }
-                            }
+			    repositories {
+				repository {
+				    id 'central'
+				    name 'Maven Repository Switchboard'
+				    url 'http://repo1.maven.org/maven2'
+				}
+				repository {
+				    id 'k-4u'
+				    name 'k-4u Maven'
+				    url 'http://maven.k-4u.nl/'
+				}
+			    }
                         }
 		    }
                 }
