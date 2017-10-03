@@ -107,8 +107,6 @@ uploadAllJars {
                 pom.whenConfigured {pom ->
                     pom.dependencies.removeAll { dep -> dep.groupId == "org" && dep.artifactId == "hid4java" }
                 }
-                println pom.dependencies
-
            }
         }
     }
