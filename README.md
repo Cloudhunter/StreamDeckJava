@@ -10,7 +10,9 @@ hid4java requires [JNA 4.2.2](https://mvnrepository.com/artifact/net.java.dev.jn
 Examples are located in the example folder to show you how to write images, random colours, and how to listen for key presses.
 
 # Builds
-I'm looking into uploading it to a Maven repository somewhere - I'm working on getting a website up for some direct jar links, and I will update this when I can :)
+Builds can be found here: http://maven.k-4u.nl/uk/co/cloudhunter/streamdeckjava/
+Can also be obtained using the Maven repo http://maven.k-4u.nl
+I'm looking into shipping the modified hid4java too - I don't know much about Maven, but hopefully will update this soon with how to easily download the modified lib. In the mean time, you can get it direct from github [here](https://github.com/Cloudhunter/StreamDeckJava/raw/master/libs/hid4java-0.5.0-modified.jar)
 
 # Caveats
 I've only tested it on Windows - in theory it should work on Linux and Mac Os X due to the hid4java library, but this is completely untested. Let me know!
